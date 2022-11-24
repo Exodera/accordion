@@ -3,16 +3,17 @@ import data from './data';
 import Question from './Question';
 import SingleQuestion from './Question';
 function App() {
+  const[questions, setQuestions]= useState(data)
   return (
   <main>
-    <section>
-    {data.map((idata)=>{
-      return <Question data={idata}/>
-    })}
-
-
+    <div className='container'>
+      <h3>Questions and answers about loggining in</h3>
+      <section className='info'>
+        {questions.map((idata)=>{
+          return <SingleQuestion   data={idata} key={idata.id}/>
+        })}
     </section>
-    
+    </div>
   </main>
   )
 } 
